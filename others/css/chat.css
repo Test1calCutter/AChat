@@ -1,0 +1,63 @@
+body{
+    background-color: rgba(14,10,27,255);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title{
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.underline{
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2.5px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-weight: bold;
+}
+
+a:hover{
+    outline: auto;
+    outline-offset: 2.5px;
+    transition-duration: 5ms;
+}
+
+
+.input-parent{
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -90%);
+    margin: 0 auto;
+}
+
+.input {
+    height: 45px;
+    width: 900px;
+    border-radius: 8px;
+    background-color: white;
+    border-color: black;
+    box-shadow: 2px 2px 150px 1px rgba(165, 165, 165, 0.549);
+}
+
+.background {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    height: 550px;
+    width: 500px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 2px 2px 150px 1px rgba(165, 165, 165, 0.549);
+    content: 'Messages will appear here!';
+    color: black;
+}
