@@ -1,0 +1,132 @@
+body {
+    background-color: rgba(14,10,27,255);
+    color: white;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.e403 {
+    text-align: center;
+    margin-top: 350px;
+    color: red;
+}
+
+.exp1 {
+    text-align: center;
+    margin: 25px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.exp2 {
+    text-align: center;
+    margin: 65px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+
+.button {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.return {
+    background-color: hotpink;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 150px 1px rgba(255, 105, 180, 0.549);
+    transition-duration: .5s;
+}
+
+.return:hover {
+    background-color: rgba(255, 90, 173, 0.798);
+    transition-duration: .5s;
+    border-radius: 15px;
+}
+
+.return:not(:hover) {
+    background-color: hotpink;
+    transition-duration: .5s;
+    border-radius: 8px;
+}
+
+
+.line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    transform-origin: 6px 6px;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+  }
+  
+  .line.active {
+    transform: translate(calc(-50% + var(--line-offset-x)), calc(-50% + var(--line-offset-y)));
+    opacity: 0.8;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.8);
+    transition-delay: 0.2s;
+  }
+  
+  .line.active:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1000vw;
+    height: 1px;
+    background-color: white;
+    transform-origin: 0 0;
+    z-index: -1;
+    opacity: 0.8;
+    transition: all 0.2s ease-out;
+  }
+  
+  .line.active:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 1000vh;
+    background-color: white;
+    transform-origin: 0 0;
+    z-index: -1;
+    opacity: 0.8;
+    transition: all 0.2s ease-out;
+  }
+
+div.line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  transform-origin: 6px 6px;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition-delay: 0.2s;
+  box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+div.line.active {
+  transform: translate(calc(-50% + var(--line-offset-x)), calc(-50% + var(--line-offset-y)));
+  opacity: 0.8;
+}
