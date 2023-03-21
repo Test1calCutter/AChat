@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+
+<link rel="stylesheet" href="others/css/chat.css">
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACHAT - Chat</title> 
+</head>
+  <body> 
+    <div class="chat-box">
+      <div style="color: white" class="header">
+        <h1 class="title">ACHAT - Your privacy is essential!</h1>
+      </div>
+
+      <div id="chat" style="overflow-y: scroll;">
+        <ul style="color: white;" id="messages">
+          <span class="message-time"></span> 
+        </ul>
+
+      </div> 
+      
+    </div>
+
+    <center class="box">
+      <form id="send-message">
+          <input id="chat-txt" class="field" type="text" required/>
+          <!--
+          <button id="chat-btn" class="interested">Submit</button>
+          -->
+      </form>
+    </center>
+
+
+
+
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+      <script src="others/js/d.js"></script>
+  </body> 
+</html>
