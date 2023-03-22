@@ -41,7 +41,7 @@ const msg = "<li>" + messages.usr + " : " + messages.msg + "</li>";
 document.getElementById("messages").innerHTML += msg; });
 
 (function(){
-  var msg = "Your Username will be your UID. Be careful what you say here, we do not take responsibility of your account. You have to look after you account by yourself. \nWe will not share, download or review any of the messages beign written here. We trust our users to be kind to each other.\nNo illegal activities allowed here.\n\nFuture updates will be shown at our homepage!";
+  var msg = "Your Username will be your UID. Be careful what you say here, we do not take responsibility of your account. You have to look after you account by yourself. \nWe will not share, download or review any of the messages being written here. We trust our users to be kind to each other.\nNo illegal activities allowed here.\n\nFuture updates will be shown at our homepage!";
   var closeBtnMsg = "OK";
   var privacyBtnMsg = "";
   
