@@ -1,12 +1,14 @@
 body {
-    width: 100%;
+    width: auto;
     height: 100%;
     overflow: hidden;
-
     background-color: rgba(14,10,27,255);
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html, body {
+  overflow-x: hidden;
+}
 .title {
     text-align: center;
 }
