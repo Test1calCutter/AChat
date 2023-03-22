@@ -1,6 +1,10 @@
 body {
   background-color: #eeeeee;
+    overflow: hidden;
+  height:100%;
+  width: auto;
 }
+
 
 .whole403 {
   position:absolute;
