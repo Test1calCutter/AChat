@@ -14,7 +14,15 @@ const db = firebase.database();
 const auth = firebase.auth()
 
 const user = auth.currentUser;
-console.log()
+
+auth.onAuthStateChanged(function(user) {
+  if (user) {
+    console.log("Access Granted.")
+  } else {
+    console.log("Access Denied. Please login.")
+    window.location.href="index.html"
+  }
+});
 
 document.getElementById("send-message").addEventListener("submit", postChat); function postChat(e) 
 { e.preventDefault();
@@ -31,3 +39,40 @@ const fetchChat = db.ref("messages/");
 fetchChat.on("child_added", function (snapshot) { const messages = snapshot.val(); 
 const msg = "<li>" + messages.usr + " : " + messages.msg + "</li>";
 document.getElementById("messages").innerHTML += msg; });
+
+(function(){
+  var msg = "Your Username will be your UID. Be careful what you say here, we do not take responsibility of your account. You have to look after you account by yourself. \nWe will not share, download or review any of the messages beign written here. We trust our users to be kind to each other.\nNo illegal activities allowed here.\n\nFuture updates will be shown at our homepage!";
+  var closeBtnMsg = "OK";
+  var privacyBtnMsg = "";
+  
+  var docRoot = document.body;
+  var okC = document.createElement("div");
+  okC.setAttribute("id", "okCookie");
+  var okCp = document.createElement("p");
+  var okcText = document.createTextNode(msg); 
+  
+  var okCclose = document.createElement("a");
+  var okcCloseText = document.createTextNode(closeBtnMsg);
+  okCclose.setAttribute("href", "#");
+  okCclose.setAttribute("id", "okClose");
+  okCclose.appendChild(okcCloseText);
+  okCclose.addEventListener("click", closeCookie, false);
+ 
+  var okCprivacy = document.createElement("a");
+  var okcPrivacyText = document.createTextNode(privacyBtnMsg);
+  okCprivacy.setAttribute("id", "okCprivacy");
+  okCprivacy.appendChild(okcPrivacyText);
+
+  okCp.appendChild(okcText);
+  okC.appendChild(okCp);
+  okC.appendChild(okCclose);
+  docRoot.appendChild(okC);
+  
+  okC.classList.add("okcBeginAnimate");
+  
+  function closeCookie(){
+    var cookieExpire = new Date();
+    docRoot.removeChild(okC);
+  }
+  
+})();
