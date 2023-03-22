@@ -2,7 +2,7 @@ function href(){
     window.location.href="register.html";
 }
 (function(){
-    var msg = "All your data is stored inside our databse. Nobody else except the provider and the creator of ACHAT will have access to this data. Your data will not be selled to third-parties. You can request your data to be wiped from our database by contacting us on Discord!";
+    var msg = "Your data (E-Mail adress, Username) is stored inside our database. Nobody else except the database provider and the creator of ACHAT will have access to this data. Your data will not be sold to third-parties. You can request your data to be wiped from our database by contacting us on Discord!";
     var closeBtnMsg = "OK";
     var privacyBtnMsg = "";
     
