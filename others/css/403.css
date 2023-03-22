@@ -1,5 +1,9 @@
-html {
+html, body {
+  overflow-x: hidden;
   background-color: #eeeeee;
+}
+body {
+  position: relative;
 }
 
 .whole403 {
