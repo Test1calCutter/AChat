@@ -8,32 +8,37 @@
   <title>ACHAT - Chat</title> 
 </head>
   <body> 
+
+
     <div class="chat-box">
       <div style="color: white" class="header">
         <h1 class="title">ACHAT - Your privacy is essential!</h1>
 
       </div>
 
-      <div id="chat" style="overflow-y: scroll;">
+      <div id="chat" style="overflow-y:auto;">
         <ul style="color: white;" id="messages">
-          <span class="message-time"></span> 
         </ul>
-
       </div> 
-      
-    </div>
 
+      <div>
+        <button onclick="scrollToBottom()" class="scroll">Scroll down</button>
+      </div>
+
+    </div>
     <center class="box">
       <form id="send-message">
-          <input id="chat-txt" class="field" type="text" required placeholder="Message @everyone" style="color:black; text-align: center;"/>
+          <input id="chat-txt" class="field" type="text" required placeholder="Message @everyone" style="color:black; text-align: center;"></input>
+          
+
           <!--
           <button id="chat-btn" class="interested">Submit</button>
           -->
+
       <a href="index.html" class="home">↩ Head back </a>
       </form>
       
     </center>
-
 
 
 
