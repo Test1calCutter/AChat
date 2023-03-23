@@ -1,6 +1,7 @@
 body{
     background-color: rgba(14,10,27,255);
     color: white;
+    height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -11,6 +12,7 @@ body{
 
 .underline{
     text-decoration: underline;
+  
     text-underline-offset: 2px;
     text-decoration-thickness: 2.5px;
 }
@@ -27,6 +29,53 @@ a:hover{
     outline-offset: 2.5px;
     transition-duration: 5ms;
 }
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 0px;
+
+  
+  }
+  
+  .div1 { grid-area: 3 / 2 / 4 / 3;  margin-top: -5rem; font-weight: bold; box-shadow: -2px 2px 30px 1px #1f1f1f; background-color:#333333; border-radius: 25px; height: 500px; width: 350px; border-style:solid; border-color:#3333337e;}
+    
+    .div3 { grid-area: 3 / 3 / 4 / 4; }
+  .div2 { grid-area: 3 / 4 / 4 / 5; margin-top: -5rem; font-weight: bold; box-shadow: 2px 2px 30px 1px #1f1f1f; background-color:#333333; border-radius: 25px; height: 500px; width: 350px; border-style:solid; border-color:#3333337e;}
+
+
+@media (orientation: portrait){
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 15px;
+    }
+    
+    .div1 { grid-area: 3 / 3 / 4 / 4; margin-top: -5rem; font-weight: bold; box-shadow: -2px 2px 30px 1px #1f1f1f; background-color:#333333; border-radius: 25px; height: 500px; width: 350px; border-style:solid; border-color:#3333337e;}
+    .div2 { grid-area: 4 / 3 / 5 / 4; margin-top: -1rem; font-weight: bold; box-shadow: -2px 2px 30px 1px #1f1f1f; background-color:#333333; border-radius: 25px; height: 500px; width: 350px; border-style:solid; border-color:#3333337e;}
+}
+
+
+.list {
+  text-align: center;
+}
+  .parent2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 0px;
+    margin-top: -40rem;
+    }
+    
+    .fu1 { grid-area: 3 / 2 / 4 / 3; }
+    .fu2 { grid-area: 3 / 3 / 4 / 4; }
+    .fu3 { grid-area: 3 / 4 / 4 / 5; }
+
 
 .interested {
     background-color: hotpink;
@@ -58,14 +107,14 @@ a:hover{
 }
   
 [tooltip] {
-    position: relative; /* opinion 1 */
+    position: relative;
   }
   
-  /* Applies to all tooltips */
+  
   [tooltip]::before,
   [tooltip]::after {
-    text-transform: none; /* opinion 2 */
-    font-size: .9em; /* opinion 3 */
+    text-transform: none;
+    font-size: .9em;
     line-height: 1;
     user-select: none;
     pointer-events: none;
@@ -75,20 +124,13 @@ a:hover{
   }
   [tooltip]::before {
     content: '';
-    border: 5px solid transparent; /* opinion 4 */
-    z-index: 1001; /* absurdity 1 */
+    border: 5px solid transparent;
+    z-index: 1001;
   }
   [tooltip]::after {
-    content: attr(tooltip); /* magic! */
-    
-    /* most of the rest of this is opinion */
+    content: attr(tooltip);
     font-family: Helvetica, sans-serif;
     text-align: center;
-    
-    /* 
-      Let the content set the size of the tooltips 
-      but this will also keep them from being obnoxious
-      */
     min-width: 3em;
     max-width: 21em;
     white-space: nowrap;
@@ -99,22 +141,19 @@ a:hover{
     box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
     background: #333;
     color: #fff;
-    z-index: 1000; /* absurdity 2 */
+    z-index: 1000;
   }
-  
-  /* Make the tooltips respond to hover */
+
   [tooltip]:hover::before,
   [tooltip]:hover::after {
     display: block;
   }
-  
-  /* don't show empty tooltips */
+
   [tooltip='']::before,
   [tooltip='']::after {
     display: none !important;
   }
-  
-  /* FLOW: UP */
+
   [tooltip]:not([flow])::before,
   [tooltip][flow^="up"]::before {
     bottom: 100%;
@@ -133,7 +172,6 @@ a:hover{
     transform: translate(-50%, -.5em);
   }
   
-  /* FLOW: DOWN */
   [tooltip][flow^="down"]::before {
     top: 100%;
     border-top-width: 0;
@@ -147,8 +185,7 @@ a:hover{
     left: 50%;
     transform: translate(-50%, .5em);
   }
-  
-  /* FLOW: LEFT */
+
   [tooltip][flow^="left"]::before {
     top: 50%;
     border-right-width: 0;
@@ -161,8 +198,7 @@ a:hover{
     right: calc(100% + 5px);
     transform: translate(-.5em, -50%);
   }
-  
-  /* FLOW: RIGHT */
+
   [tooltip][flow^="right"]::before {
     top: 50%;
     border-left-width: 0;
@@ -175,8 +211,7 @@ a:hover{
     left: calc(100% + 5px);
     transform: translate(.5em, -50%);
   }
-  
-  /* KEYFRAMES */
+
   @keyframes tooltips-vert {
     to {
       opacity: .9;
@@ -190,8 +225,7 @@ a:hover{
       transform: translate(0, -50%);
     }
   }
-  
-  /* FX All The Things */ 
+
   [tooltip]:not([flow]):hover::before,
   [tooltip]:not([flow]):hover::after,
   [tooltip][flow^="up"]:hover::before,
@@ -210,7 +244,7 @@ a:hover{
   #okCookie{
   background-color:#F2F2F2;
   color:#333333;
-  position:absolute;
+  position: fixed;
   bottom:0;
   left:0;
     height: auto;
@@ -256,14 +290,115 @@ a:hover{
     animation: myfirst 2s;
 }
 
-/* Chrome, Safari, Opera */
+
 @-webkit-keyframes myfirst {
     from {opacity: 0;}
     to {opacity: 1;}
 }
 
-/* Standard syntax */
 @keyframes myfirst {
     from {opacity: 0;}
     to {opacity: 1;}
 } 
+
+
+.footer {
+  width: 100%;
+  position: relative;
+  height: 255px;
+  box-shadow: 2px 2px 150px 159px #070617;
+  background-color: #070617;
+}
+.footer .col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+}
+.footer .col h1 {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
+  color: rgba(255,255,255,0.2);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.250em;
+}
+.footer .col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .col ul li {
+  color: #999999;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+}
+.social ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+  color: #ffffff;
+  transition: .1s;
+  -webkit-transition: .1s;
+  -moz-transition: .1s;
+}
+.clearfix {
+  clear: both;
+}
+@media only screen and (min-width: 1280px) {
+  .contain {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1139px) {
+  .contain .social {
+    width: 1000px;
+    display: block;
+  }
+  .social h1 {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .footer .col {
+    width: 33%;
+  }
+  .footer .col h1 {
+    font-size: 14px;
+  }
+  .footer .col ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 500px) {
+    .footer .col {
+      width: 50%;
+    }
+    .footer .col h1 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+}
+@media only screen and (max-width: 340px) {
+  .footer .col {
+    width: 100%;
+  }
+}
