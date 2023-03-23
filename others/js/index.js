@@ -39,7 +39,7 @@ function href(){
   })();
 
 function revolt(){
-  window.location.href = "https://rvlt.gg/Tv91HtMd"
+  window.location.href = "https://rvlt.gg/SGR92CXw"
 }
 
 function twitter(){
