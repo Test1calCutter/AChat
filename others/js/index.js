@@ -37,3 +37,27 @@ function href(){
     }
     
   })();
+
+function revolt(){
+  window.location.href = "https://rvlt.gg/Tv91HtMd"
+}
+
+function twitter(){
+  window.location.href = "https://twitter.com/testicalcutter"
+}
+
+function discord(){
+  window.location.href = "https://www.discord.gg/users/545015390020042752"
+}
+
+function hope(){
+  alert("Imagine it would be that simple to find the code. GO FIND IT")
+}
+
+function np(){
+  alert("Still in development!")
+}
+
+function status(){
+  window.location.href="https://stats.uptimerobot.com/PVMpwF0Y0j/793978413"
+}
