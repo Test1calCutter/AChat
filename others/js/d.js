@@ -9,6 +9,23 @@ const firebaseConfig = {
   measurementId: "G-EXYF8D16M3"
 };
 
+function scroll(){
+  var chat = document.getElementById("chat");
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function scrollToBottom() {
+  var chat = document.getElementById("chat");
+  chat.scrollTop = chat.scrollHeight;
+  console.log(chat.scrollHeight); // should be greater than chat.clientHeight
+  console.log(chat.clientHeight); // should be less than chat.scrollHeight
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  scrollToBottom();
+});
+
+
 firebase.initializeApp(firebaseConfig); 
 const db = firebase.database();
 const auth = firebase.auth()
@@ -26,12 +43,14 @@ auth.onAuthStateChanged(function(user) {
 
 document.getElementById("send-message").addEventListener("submit", postChat); function postChat(e) 
 { e.preventDefault();
+
+scroll();
 const timestamp = Date.now(); 
 const chatTxt = document.getElementById("chat-txt");
 const message = chatTxt.value; chatTxt.value = ""; 
 const user = auth.currentUser;
 db.ref("messages/" + timestamp).set({ 
-  usr: user.uid,
+  usr: "Unknown User",
   msg: message, 
 }); 
 }
@@ -71,8 +90,8 @@ document.getElementById("messages").innerHTML += msg; });
   okC.classList.add("okcBeginAnimate");
   
   function closeCookie(){
-    var cookieExpire = new Date();
     docRoot.removeChild(okC);
   }
   
 })();
+
