@@ -1,0 +1,140 @@
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(14,10,27,255);
+  color: white;
+}
+
+.delete {
+  color: white;
+  background-color: darkred;
+  height: 30px;
+  width: 200px;
+  border-radius: 8px;
+  border-style: none;
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition:0.2s;
+    box-shadow: 0px 0px 30px 1px darkred;
+    border-color: white;
+}
+
+.delete:hover {
+  background-color: rgb(167, 0, 0);
+    box-shadow: 0px 0px 65px 15px darkred;
+    transition:0.2s;
+}
+
+.save {
+  color: white;
+  background-color: green;
+  height: 60px;
+  width: 200px;
+  border-radius: 8px;
+  border-style: none;
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition:0.2s;
+    box-shadow: 0px 0px 30px 1px green;
+    border-color: white;
+}
+
+.save:hover {
+  background-color: lime;
+    box-shadow: 0px 0px 65px 15px lime;
+    transition:0.2s;
+}
+
+.un {
+  height: 25px;
+  width: 250px;position: fixed;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition:0.2s;
+  border-style: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 30px 1px green;
+
+}
+
+.un:hover {
+  box-shadow: 2px 2px 30px 15px lime;
+
+  transition:0.2s;
+
+}
+
+.un2 {
+  height: 25px;
+  width: 250px;position: fixed;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition:0.2s;
+  border-style: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 30px 1px green;
+
+}
+
+.un2:hover {
+  box-shadow: 2px 2px 30px 15px lime;
+
+  transition:0.2s;
+
+}
+
+.title-un{
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title-un2{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box{text-align: center;
+  height: 500px;
+  width: 400px;
+  box-shadow: 2px 2px 30px 1px #0057215f;
+  background-image: url(../img/bg.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+  position: fixed;
+  top: 50%;
+  border-radius: 8px;
+  left: 50%;
+  transition:0.2s;
+  transform: translate(-50%, -50%);
+}
+
+.box:hover{
+  transition:0.2s;
+  box-shadow: 2px 2px 30px 15px #00d1505f;
+}
+
+.back {
+  font-weight: bolder;
+  transition:0.2s;
+  text-align: center;
+  margin-top: 0px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.back:hover {
+  transition:0.2s;
+  color: rgb(223, 223, 223);
+}
