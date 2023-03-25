@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="others/css/style.css">
     <script src="others/js/chat.js" defer></script><script src="https://kit.fontawesome.com/4b35c5b6e5.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="others/js/index.js" defer></script>
     <title>AChat - Chat with anyone in the Internet!</title>
 </head>
 <body>
+    
 <div class="homepage">
     <div class="header" style="text-align: center; margin-top: 25px;">
-
         <h3>ACHAT - Your privacy is essential!</h3>
         <div class="buttons">
             <a href="chat.html" id="chat" class="underline">Chat</a>
-            <a href="403.html"id="profile" class="underline" >Profile</a>
+            <a href="profile.html"id="profile" class="underline" >Profile</a>
             <a href="register.html" id="login" class="underline" >Login</a>
         </div>
     </div>
@@ -28,7 +31,24 @@
 
         <div>
             <button onclick="href()" class="interested">Interested yet?</button>
+            <!--<h4 style="text-align: center;">Liking the project? Leave a heart <3</h4>-->
+            <div>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+                <!--
+                                   <div class="container">
+        
+                  <i class="far fa-heart js-heart heart" id="heart"></i>
+                </div>
+                <h5 style="margin-top: -3px;" id="likes"></h5>
+ 
+                 
+                -->
+
+            </div>
         </div>
+        
     </div>
 <br>
 <br>
@@ -46,12 +66,6 @@
             <div class="div1">
                 <h3>
                     <h1 class="title">Future Updates</h1>
-                    <li class="list">
-                        User Profile
-                    </li>
-                    <li class="list">
-                        Username instead of UID
-                    </li>
                     <li class="list">
                         Profile Pictures
                     </li>
