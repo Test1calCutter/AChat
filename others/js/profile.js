@@ -132,3 +132,7 @@ const firebaseConfig = {
 function dadisabled(){
     alert("Sorry! This feature is disabled right now. Try again later!")
 }
+
+function bakc(){
+    window.location.href = "index.html";
+}
