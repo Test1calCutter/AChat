@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AChat - Profile</title>
+    <link rel="stylesheet" href="others/css/profile.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="others/js/profile.js"></script>
+</head>
+<body>
+  <h3 class="back" style="width: 145px;">↩Head back</h3>
+  <div class="box">
+    <div>
+      <form>
+        <h2 class="title-un">Username</h2>
+        <input type="text" id="username" class="un">
+
+        <h2 class="title-un2">New Password</h2>
+        <input type="password" id="password" class="un2">
+
+        <button class="save " onclick="save(event)" id="save2">Save Changes</button>
+        <button class="delete" onclick="deleteacc()">Delete Account</button>
+      </form>
+      
+    </div>
+  </div>
+  <h1 id="alert" style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"></h1>
+</body>
+</html>
