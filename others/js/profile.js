@@ -127,3 +127,8 @@ const firebaseConfig = {
       console.error(error);
     });
   }
+
+
+function dadisabled(){
+    alert("Sorry! This feature is disabled right now. Try again later!")
+}
