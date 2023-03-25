@@ -16,7 +16,7 @@ const firebaseConfig = {
 
   firebase.auth().onAuthStateChanged(function(user) {
     
-   if(!user || TypeError){
+   if(!user){
      window.location.href="index.html";
    }else{
 
@@ -50,26 +50,26 @@ const firebaseConfig = {
   })
 
 
-async function deleteacc() {
-  try {
-    const user = firebase.auth().currentUser;
-    const uid = user.uid;
-    const userRef = firebase.database().ref('users/' + uid);
+//async function deleteacc() {
+//  try {
+//    const user = firebase.auth().currentUser;
+//    const uid = user.uid;
+ //   const userRef = firebase.database().ref('users/' + uid);
   
     // Delete the user data from the Realtime Database
-    await userRef.remove();
-    console.log('User data deleted successfully');
+ //   await userRef.remove();
+ //   console.log('User data deleted successfully');
 
     // Delete the user account from Firebase Authentication
-    await user.delete();
-    console.log('User account deleted successfully');
+ //   await user.delete();
+ //   console.log('User account deleted successfully');
 
     // Redirect to index page
-    window.location.href = "index.html";
-  } catch (error) {
-    console.error('Error deleting user account and data: ', error);
-  }
-}
+ //   window.location.href = "index.html";
+ // } catch (error) {
+ //   console.error('Error deleting user account and data: ', error);
+//  }
+//}
   //function deleteacc(){
   //  //const currentUser = firebase.auth().currentUser;
   //  const user = firebase.auth().currentUser;
