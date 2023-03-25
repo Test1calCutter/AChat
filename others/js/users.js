@@ -1,3 +1,4 @@
+
 const firebaseConfig = {
   apiKey: "AIzaSyBfrUKGGIDTXgXSeIx0ozWkt8EFyX6iIh0",
   authDomain: "achat-31383.firebaseapp.com",
@@ -18,6 +19,7 @@ function register () {
   email = document.getElementById('email').value
   password = document.getElementById('password').value
   full_name = document.getElementById('full_name').value
+  console.log("ready")
 
   if (validate_email(email) == false || validate_password(password) == false) {
     alert('Email or Password is Outta Line!!')
@@ -31,17 +33,30 @@ function register () {
   auth.createUserWithEmailAndPassword(email, password)
   .then(function() {
     var user = auth.currentUser
+    
     var database_ref = db.ref()
     var user_data = {
       email : email,
       full_name : full_name,
       last_login : Date.now(),
+      password:password
     }
 
     database_ref.child('users/' + user.uid).set(user_data)
-
-    window.location.href="index.html"
+    .then(() => {
+      window.location.href="index.html"
+    })
+    .catch(error => {
+      console.error('Error storing user data:', error)
+    })
   })
+  .catch(function(error) {
+    var error_code = error.code
+    var error_message = error.message
+
+    alert(error_message)
+  })
+
   .catch(function(error) {
     var error_code = error.code
     var error_message = error.message
