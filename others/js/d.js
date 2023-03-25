@@ -33,13 +33,11 @@ const auth = firebase.auth()
 const user = auth.currentUser;
 
 auth.onAuthStateChanged(function(user) {
-  if (!user || TypeError) {
+  if (!user) {
     window.location.href="index.html"
     console.log("Access Denied. Please login.")
   } else {
     console.log("Access Granted.")
-    user.uid;
-
   }
 });
 
