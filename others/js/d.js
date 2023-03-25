@@ -17,8 +17,8 @@ function scroll(){
 function scrollToBottom() {
   var chat = document.getElementById("chat");
   chat.scrollTop = chat.scrollHeight;
-  console.log(chat.scrollHeight); // should be greater than chat.clientHeight
-  console.log(chat.clientHeight); // should be less than chat.scrollHeight
+  console.log(chat.scrollHeight);
+  console.log(chat.clientHeight);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -33,27 +33,58 @@ const auth = firebase.auth()
 const user = auth.currentUser;
 
 auth.onAuthStateChanged(function(user) {
-  if (user) {
-    console.log("Access Granted.")
-  } else {
-    console.log("Access Denied. Please login.")
+  if (!user || TypeError) {
     window.location.href="index.html"
+    console.log("Access Denied. Please login.")
+  } else {
+    console.log("Access Granted.")
+    user.uid;
+
   }
 });
 
-document.getElementById("send-message").addEventListener("submit", postChat); function postChat(e) 
-{ e.preventDefault();
 
-scroll();
-const timestamp = Date.now(); 
-const chatTxt = document.getElementById("chat-txt");
-const message = chatTxt.value; chatTxt.value = ""; 
-const user = auth.currentUser;
-db.ref("messages/" + timestamp).set({ 
-  usr: "Unknown User",
-  msg: message, 
-}); 
+document.getElementById("send-message").addEventListener("submit", postChat);
+
+//function postChat(e) 
+//{ e.preventDefault();
+//
+//scroll();
+//const timestamp = Date.now(); 
+//const chatTxt = document.getElementById("chat-txt");
+//const message = chatTxt.value; chatTxt.value = ""; 
+//const user = auth.currentUser;
+//
+//db.ref("messages/" + timestamp).set({ 
+//  usr: "Unknown User",
+//  msg: message,
+//  uid: user.uid,
+//}); 
+//}
+function postChat(e) { 
+  e.preventDefault();
+  
+  const timestamp = Date.now(); 
+  const chatTxt = document.getElementById("chat-txt");
+  const message = chatTxt.value; 
+  chatTxt.value = ""; 
+  const user = auth.currentUser;
+  
+  db.ref("users/" + user.uid).once("value")
+    .then((snapshot) => {
+      const userData = snapshot.val();
+      const fullName = userData.full_name;
+      db.ref("messages/" + timestamp).set({ 
+        usr: fullName,
+        msg: message,
+        uid: user.uid,
+      }); 
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
+
 const fetchChat = db.ref("messages/"); 
 fetchChat.on("child_added", function (snapshot) { const messages = snapshot.val(); 
 const msg = "<li>" + messages.usr + " : " + messages.msg + "</li>";
